@@ -7,7 +7,7 @@
 </script>
 
 <section {id}>
-	<h2><span class="marker" aria-hidden="true">#</span> {heading}</h2>
+	<h2>{heading}</h2>
 	{@render children()}
 </section>
 
@@ -17,17 +17,12 @@
 	}
 
 	section:not(:first-of-type) {
-		border-top: 4px solid transparent;
-		border-image: linear-gradient(90deg, var(--primary), var(--secondary), var(--tertiary)) 1;
+		border-top: 1px solid var(--border);
 	}
 
 	h2 {
-		font-size: 1.2rem;
-		text-transform: lowercase;
+		font-size: 1.3rem;
+		text-transform: capitalize;
 		margin: 0 0 var(--space-3);
-	}
-
-	.marker {
-		color: var(--secondary);
 	}
 </style>

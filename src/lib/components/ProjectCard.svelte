@@ -34,14 +34,13 @@
 		gap: var(--space-2);
 		padding: var(--space-3);
 		background: var(--bg-panel);
-		border: 3px solid var(--border);
+		border: 1px solid var(--border);
 		border-radius: 4px;
-		box-shadow: var(--shadow);
 	}
 
 	.shot {
 		aspect-ratio: 16 / 10;
-		border: 2px dashed var(--border);
+		border: 1px dashed var(--border);
 		border-radius: 3px;
 		overflow: hidden;
 		display: flex;
@@ -74,7 +73,7 @@
 	.role {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		color: var(--secondary);
+		color: var(--fg-dim);
 		margin: 0;
 		font-weight: 700;
 	}
@@ -96,22 +95,25 @@
 	}
 
 	.stack li {
-		border: 2px solid var(--border);
+		border: 1px solid var(--border);
 		border-radius: 3px;
 		padding: 0.15rem 0.5rem;
-		color: var(--fg);
-		font-weight: 700;
+		color: var(--fg-dim);
 	}
 
-	.stack li:nth-child(3n + 1) {
-		border-color: var(--primary);
+	.stack li:nth-child(4n + 1) {
+		border-color: var(--orb-1);
 	}
 
-	.stack li:nth-child(3n + 2) {
-		border-color: var(--secondary);
+	.stack li:nth-child(4n + 2) {
+		border-color: var(--orb-2);
 	}
 
-	.stack li:nth-child(3n + 3) {
-		border-color: var(--tertiary);
+	.stack li:nth-child(4n + 3) {
+		border-color: var(--orb-3);
+	}
+
+	.stack li:nth-child(4n + 4) {
+		border-color: var(--orb-4);
 	}
 </style>

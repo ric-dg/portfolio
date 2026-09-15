@@ -3,6 +3,8 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import VisitorCounter from '$lib/components/VisitorCounter.svelte';
+	import Marquee from '$lib/components/Marquee.svelte';
+	import Orb from '$lib/components/Orb.svelte';
 
 	let { children } = $props();
 </script>
@@ -11,13 +13,17 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<Marquee
+	text="Welcome to ricardo.dev — full-stack developer, DevOps, and cloud engineer — thanks for stopping by"
+/>
+
 <div class="shell">
 	<header>
 		<a href="#top" class="brand">ricardo.dev</a>
 		<nav aria-label="Section navigation">
-			<a href="#about">about</a>
-			<a href="#work">work</a>
-			<a href="#contact">contact</a>
+			<a href="#about"><Orb color={1} />about</a>
+			<a href="#work"><Orb color={2} />work</a>
+			<a href="#contact"><Orb color={3} />contact</a>
 		</nav>
 		<ThemeToggle />
 	</header>
@@ -53,10 +59,11 @@
 		gap: var(--space-3);
 		padding-block: var(--space-3);
 		flex-wrap: wrap;
+		font-family: var(--font-ui);
 	}
 
 	.brand {
-		font-family: var(--font-display);
+		font-weight: 700;
 		color: var(--fg);
 		text-decoration: none;
 		font-size: 1.1rem;
@@ -64,29 +71,13 @@
 
 	nav {
 		display: flex;
-		gap: var(--space-2);
-		font-family: var(--font-mono);
-		font-size: 0.85rem;
+		gap: var(--space-3);
+		font-size: 0.9rem;
 		margin-right: auto;
 	}
 
 	nav a {
-		color: var(--fg);
-		text-decoration: none;
-		background: var(--bg-panel);
-		border: 2px solid var(--border);
-		box-shadow: var(--shadow-sm);
-		padding: 0.3rem 0.7rem;
-		border-radius: 3px;
-	}
-
-	nav a:visited {
-		color: var(--fg);
-	}
-
-	nav a:hover {
-		transform: translate(1px, 1px);
-		box-shadow: 2px 2px 0 var(--border);
+		text-decoration: underline;
 	}
 
 	main {
@@ -95,7 +86,7 @@
 
 	footer {
 		padding-block: var(--space-3);
-		border-top: 3px solid var(--border);
+		border-top: 1px solid var(--border);
 		font-family: var(--font-mono);
 		font-size: 0.7rem;
 		color: var(--fg-dim);

@@ -2,7 +2,10 @@
 	import Section from '$lib/components/Section.svelte';
 	import TerminalLine from '$lib/components/TerminalLine.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import CrossfadeBadge from '$lib/components/CrossfadeBadge.svelte';
 	import type { Project } from '$lib/types';
+
+	const roles = ['Web Developer', 'DevOps', 'Cloud Engineer'];
 
 	// image stays unset until a real, NDA-safe UI screenshot exists for each -
 	// ProjectCard renders an honest "screenshot pending" placeholder rather
@@ -69,7 +72,10 @@
 <section class="hero">
 	<TerminalLine command="whoami">
 		<h1>Ricardo De Guzman Jr.</h1>
-		<p class="tagline">Web Developer &middot; DevOps &middot; Cloud Engineer</p>
+		<p class="tagline">
+			<span class="sr-only">Web Developer, DevOps, and Cloud Engineer</span>
+			<span aria-hidden="true"><CrossfadeBadge labels={roles} /></span>
+		</p>
 	</TerminalLine>
 </section>
 

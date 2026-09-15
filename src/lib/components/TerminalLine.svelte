@@ -24,7 +24,7 @@
 	}
 
 	.prompt {
-		color: var(--tertiary);
+		color: var(--orb-2);
 	}
 
 	.sep {
@@ -34,7 +34,7 @@
 
 	.cursor {
 		display: inline-block;
-		color: var(--secondary);
+		color: var(--orb-1);
 		animation: blink 1.1s steps(1) infinite;
 	}
 
