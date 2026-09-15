@@ -1,42 +1,33 @@
-# sv
+# ricardo.dev
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv@0.17.0 create --template minimal --types ts --add prettier eslint sveltekit-adapter="adapter:static" --install bun portfolio
-```
+Personal portfolio. SvelteKit + TypeScript, fully static (`@sveltejs/adapter-static`,
+whole site prerendered at build time — no server, no SSR runtime needed at all).
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
+bun run dev -- --open
 ```
 
-## Building
+## Before deploying
 
-To create a production version of your app:
+- [ ] Replace the placeholder project cards in `src/routes/+page.svelte` (search
+      for `TODO(ricardo)`) with real, NDA-cleared screenshots and descriptions.
+- [ ] Replace the About section's placeholder bio text.
+- [ ] Add real screenshot files under `static/` and point each `Project.image`
+      at them (see `src/lib/types.ts`).
+
+## Checking, building, deploying
 
 ```sh
-npm run build
+bun run check   # svelte-check (types)
+bun run lint    # prettier + eslint
+bun run build   # outputs a fully static site to ./build
+bun run preview # serve the production build locally
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+`./build` after `bun run build` is a plain static site — deploy it to Cloudflare
+Pages by connecting this GitHub repo (build command `bun run build`, output
+directory `build`), or drag-and-drop the `build/` folder into the Cloudflare
+Pages dashboard for a one-off deploy with no CI wiring at all.
