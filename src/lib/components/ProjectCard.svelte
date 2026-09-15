@@ -34,13 +34,14 @@
 		gap: var(--space-2);
 		padding: var(--space-3);
 		background: var(--bg-panel);
-		border: 1px solid var(--border);
+		border: 3px solid var(--border);
 		border-radius: 4px;
+		box-shadow: var(--shadow);
 	}
 
 	.shot {
 		aspect-ratio: 16 / 10;
-		border: 1px dashed var(--border);
+		border: 2px dashed var(--border);
 		border-radius: 3px;
 		overflow: hidden;
 		display: flex;
@@ -73,8 +74,9 @@
 	.role {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		color: var(--accent);
+		color: var(--secondary);
 		margin: 0;
+		font-weight: 700;
 	}
 
 	p {
@@ -94,9 +96,22 @@
 	}
 
 	.stack li {
-		border: 1px solid var(--border);
+		border: 2px solid var(--border);
 		border-radius: 3px;
 		padding: 0.15rem 0.5rem;
-		color: var(--fg-dim);
+		color: var(--fg);
+		font-weight: 700;
+	}
+
+	.stack li:nth-child(3n + 1) {
+		border-color: var(--primary);
+	}
+
+	.stack li:nth-child(3n + 2) {
+		border-color: var(--secondary);
+	}
+
+	.stack li:nth-child(3n + 3) {
+		border-color: var(--tertiary);
 	}
 </style>

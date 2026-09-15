@@ -52,16 +52,17 @@
 	.toggle {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		color: var(--fg-dim);
-		background: transparent;
-		border: 1px solid var(--border);
+		color: var(--fg);
+		background: var(--bg-panel);
+		border: 2px solid var(--border);
+		box-shadow: var(--shadow-sm);
 		border-radius: 3px;
-		padding: 0.25rem 0.6rem;
+		padding: 0.3rem 0.7rem;
 		cursor: pointer;
 	}
 
 	.toggle:hover {
-		color: var(--fg);
-		border-color: var(--accent-dim);
+		transform: translate(1px, 1px);
+		box-shadow: 2px 2px 0 var(--border);
 	}
 </style>

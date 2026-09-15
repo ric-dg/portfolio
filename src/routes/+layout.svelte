@@ -2,6 +2,7 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import VisitorCounter from '$lib/components/VisitorCounter.svelte';
 
 	let { children } = $props();
 </script>
@@ -26,8 +27,13 @@
 	</main>
 
 	<footer>
-		<span>&copy; {new Date().getFullYear()} Ricardo De Guzman Jr.</span>
-		<span class="dim">built with SvelteKit, deployed static</span>
+		<div class="footer-row">
+			<span>&copy; {new Date().getFullYear()} Ricardo De Guzman Jr.</span>
+			<VisitorCounter />
+		</div>
+		<p class="joke">
+			best viewed in any browser, any size &middot; built with SvelteKit, deployed static
+		</p>
 	</footer>
 </div>
 
@@ -50,10 +56,10 @@
 	}
 
 	.brand {
-		font-family: var(--font-mono);
-		font-weight: 700;
+		font-family: var(--font-display);
 		color: var(--fg);
 		text-decoration: none;
+		font-size: 1.1rem;
 	}
 
 	nav {
@@ -65,12 +71,22 @@
 	}
 
 	nav a {
-		color: var(--fg-dim);
+		color: var(--fg);
 		text-decoration: none;
+		background: var(--bg-panel);
+		border: 2px solid var(--border);
+		box-shadow: var(--shadow-sm);
+		padding: 0.3rem 0.7rem;
+		border-radius: 3px;
+	}
+
+	nav a:visited {
+		color: var(--fg);
 	}
 
 	nav a:hover {
-		color: var(--accent);
+		transform: translate(1px, 1px);
+		box-shadow: 2px 2px 0 var(--border);
 	}
 
 	main {
@@ -78,18 +94,23 @@
 	}
 
 	footer {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: var(--space-1);
 		padding-block: var(--space-3);
-		border-top: 1px solid var(--border);
+		border-top: 3px solid var(--border);
 		font-family: var(--font-mono);
 		font-size: 0.7rem;
 		color: var(--fg-dim);
 	}
 
-	.dim {
-		opacity: 0.7;
+	.footer-row {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		align-items: center;
+	}
+
+	.joke {
+		margin: var(--space-1) 0 0;
+		opacity: 0.8;
 	}
 </style>

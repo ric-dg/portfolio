@@ -106,6 +106,10 @@
 					>github.com/ric-dg</a
 				>
 			</li>
+			<li>
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- static asset download, not an app route. -->
+				<a href="/ricardo-de-guzman-cv.pdf" download>download-cv.pdf</a>
+			</li>
 		</ul>
 	</TerminalLine>
 </Section>

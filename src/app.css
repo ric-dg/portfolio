@@ -1,24 +1,38 @@
 /*
-  Design tokens. Dark terminal palette by default (this identity is
-  terminal-first, not light-first) with an explicit light "paper" mode for
-  users/OSes that prefer it. Every color used anywhere in the app must trace
-  back to a token here — never hardcode a hex outside this file.
+  Design tokens. Bright "personal homepage, circa Web 1.0" palette by
+  default - warm paper background, hard-edged purple/pink/cyan accents,
+  chunky offset-shadow borders instead of soft blur (a real CSS technique,
+  not a raster bevel image - the retro *look* without any actual legacy
+  hacks). Dark mode keeps the same personality at night rather than
+  inverting into a generic dark-mode grey.
+
+  Every color used anywhere in the app must trace back to a token here -
+  never hardcode a hex outside this file.
 */
 :root {
-	--bg: #0b0e0f;
-	--bg-panel: #12171a;
-	--fg: #d8dee2;
-	--fg-dim: #7d8891;
-	--accent: #f2a65a;
-	--accent-dim: #8a6a45;
-	--prompt: #52c98c;
-	--border: #22292c;
-	--focus-ring: #f2a65a;
+	--bg: #f5f1e6;
+	--bg-panel: #ffffff;
+	--fg: #1a1530;
+	--fg-dim: #5c5470;
+	--primary: #7b2ff7;
+	--secondary: #ff2d78;
+	--tertiary: #00a9b8;
+	--border: #1a1530;
+	--link: #0000ee;
+	--link-visited: #551a8b;
+	--focus-ring: #ff2d78;
+	--shadow: 4px 4px 0 var(--border);
+	--shadow-sm: 3px 3px 0 var(--border);
 
+	/* Headers use a plain, heavy system sans - authentically what a real
+	   personal homepage used (the OS's own bold sans), not an imported
+	   display font. One web font total (the mono accent below) keeps this
+	   fast, not five. */
+	--font-display: 'Arial Black', 'Arial Bold', Arial, sans-serif;
 	--font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 	--font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-	--measure: 42rem;
+	--measure: 46rem;
 	--space-1: 0.5rem;
 	--space-2: 1rem;
 	--space-3: 1.5rem;
@@ -26,24 +40,32 @@
 	--space-5: 4rem;
 }
 
-@media (prefers-color-scheme: light) {
-	:root:not([data-theme='dark']) {
-		--bg: #f6f3ec;
-		--bg-panel: #ffffff;
-		--fg: #23201b;
-		--fg-dim: #6b645a;
-		--accent-dim: #d9b98c;
-		--border: #ded7c9;
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		--bg: #120a24;
+		--bg-panel: #1e1238;
+		--fg: #f2eaff;
+		--fg-dim: #b8a9d9;
+		--primary: #c294ff;
+		--secondary: #ff7fae;
+		--tertiary: #4de8f2;
+		--border: #c294ff;
+		--link: #8ab4ff;
+		--link-visited: #c294ff;
 	}
 }
 
-:root[data-theme='light'] {
-	--bg: #f6f3ec;
-	--bg-panel: #ffffff;
-	--fg: #23201b;
-	--fg-dim: #6b645a;
-	--accent-dim: #d9b98c;
-	--border: #ded7c9;
+:root[data-theme='dark'] {
+	--bg: #120a24;
+	--bg-panel: #1e1238;
+	--fg: #f2eaff;
+	--fg-dim: #b8a9d9;
+	--primary: #c294ff;
+	--secondary: #ff7fae;
+	--tertiary: #4de8f2;
+	--border: #c294ff;
+	--link: #8ab4ff;
+	--link-visited: #c294ff;
 }
 
 * {
@@ -67,19 +89,22 @@ body {
 h1,
 h2,
 h3 {
-	font-family: var(--font-mono);
-	font-weight: 600;
-	line-height: 1.25;
+	font-family: var(--font-display);
+	line-height: 1.15;
 	text-wrap: balance;
 }
 
 a {
-	color: var(--accent);
+	color: var(--link);
+}
+
+a:visited {
+	color: var(--link-visited);
 }
 
 a:focus-visible,
 button:focus-visible {
-	outline: 2px solid var(--focus-ring);
+	outline: 3px solid var(--focus-ring);
 	outline-offset: 2px;
 }
 

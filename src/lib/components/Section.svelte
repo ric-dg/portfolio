@@ -14,20 +14,20 @@
 <style>
 	section {
 		padding-block: var(--space-4);
-		border-top: 1px solid var(--border);
 	}
 
-	section:first-of-type {
-		border-top: none;
+	section:not(:first-of-type) {
+		border-top: 4px solid transparent;
+		border-image: linear-gradient(90deg, var(--primary), var(--secondary), var(--tertiary)) 1;
 	}
 
 	h2 {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		text-transform: lowercase;
 		margin: 0 0 var(--space-3);
 	}
 
 	.marker {
-		color: var(--accent);
+		color: var(--secondary);
 	}
 </style>
