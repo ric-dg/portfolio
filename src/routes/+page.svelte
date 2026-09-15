@@ -38,6 +38,32 @@
 		name="description"
 		content="Web developer, DevOps and cloud engineer. Full-stack builds, from the interface to the infrastructure underneath it."
 	/>
+
+	<!-- Open Graph / Twitter Card - without these, sharing the link (email,
+	     Slack, LinkedIn) renders a blank preview with no title/image. -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://ric.svnts.xyz/" />
+	<meta
+		property="og:title"
+		content="Ricardo De Guzman Jr. — Web Developer / DevOps / Cloud Engineer"
+	/>
+	<meta
+		property="og:description"
+		content="Web developer, DevOps and cloud engineer. Full-stack builds, from the interface to the infrastructure underneath it."
+	/>
+	<meta property="og:image" content="https://ric.svnts.xyz/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta
+		name="twitter:title"
+		content="Ricardo De Guzman Jr. — Web Developer / DevOps / Cloud Engineer"
+	/>
+	<meta
+		name="twitter:description"
+		content="Web developer, DevOps and cloud engineer. Full-stack builds, from the interface to the infrastructure underneath it."
+	/>
+	<meta name="twitter:image" content="https://ric.svnts.xyz/og-image.png" />
 </svelte:head>
 
 <section class="hero">
