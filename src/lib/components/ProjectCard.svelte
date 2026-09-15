@@ -1,0 +1,102 @@
+<script lang="ts">
+	import type { Project } from '$lib/types';
+
+	let { project }: { project: Project } = $props();
+</script>
+
+<article class="card">
+	<div class="shot" class:empty={!project.image}>
+		{#if project.image}
+			<img src={project.image} alt="Screenshot of {project.title}" loading="lazy" />
+		{:else}
+			<span class="placeholder">screenshot pending</span>
+		{/if}
+	</div>
+	<div class="body">
+		<h3>{project.title}</h3>
+		<p class="role">{project.role}</p>
+		<p>{project.summary}</p>
+		<ul class="stack">
+			{#each project.stack as tech (tech)}
+				<li>{tech}</li>
+			{/each}
+		</ul>
+		{#if project.link}
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- project.link is always an external URL to a deployed project, never an internal route resolve() would apply to. -->
+			<a href={project.link} target="_blank" rel="noopener noreferrer">view →</a>
+		{/if}
+	</div>
+</article>
+
+<style>
+	.card {
+		display: grid;
+		gap: var(--space-2);
+		padding: var(--space-3);
+		background: var(--bg-panel);
+		border: 1px solid var(--border);
+		border-radius: 4px;
+	}
+
+	.shot {
+		aspect-ratio: 16 / 10;
+		border: 1px dashed var(--border);
+		border-radius: 3px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.shot img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.shot.empty {
+		background: var(--bg);
+	}
+
+	.placeholder {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: var(--fg-dim);
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.role {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: var(--accent);
+		margin: 0;
+	}
+
+	p {
+		margin: 0;
+		color: var(--fg-dim);
+	}
+
+	.stack {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		padding: 0;
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+	}
+
+	.stack li {
+		border: 1px solid var(--border);
+		border-radius: 3px;
+		padding: 0.15rem 0.5rem;
+		color: var(--fg-dim);
+	}
+</style>
