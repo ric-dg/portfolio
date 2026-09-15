@@ -4,30 +4,30 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import type { Project } from '$lib/types';
 
-	// TODO(ricardo): replace with your real work. Keep image unset until you
-	// have a real, NDA-safe screenshot - ProjectCard renders an honest
-	// "screenshot pending" placeholder rather than a fake image either way.
+	// image stays unset until a real, NDA-safe UI screenshot exists for each -
+	// ProjectCard renders an honest "screenshot pending" placeholder rather
+	// than a fake image either way.
 	const projects: Project[] = [
 		{
-			title: 'Role-scoped reporting dashboard',
-			role: 'Full-stack + infra',
+			title: 'KargaX — legacy-to-automated logistics platform',
+			role: 'Head of Product / Full-stack',
 			summary:
-				'Each organization logs in and sees only its own performance data - deliveries, document status, activity history - without asking anyone for a report.',
-			stack: ['SvelteKit', 'Postgres', 'Docker']
+				'Own the product roadmap moving trucking and logistics operations off fragmented spreadsheet workflows onto a scalable, automated system - reporting, SLA tracking, and account management, end to end.',
+			stack: ['SvelteKit', 'NestJS', 'PostgreSQL']
 		},
 		{
-			title: 'Document upload & review flow',
-			role: 'Full-stack',
+			title: 'Enterprise AWS infrastructure & CI/CD',
+			role: 'DevOps / Cloud',
 			summary:
-				'Users upload a required document, track its review status, and get notified once it is approved or needs correction.',
-			stack: ['TypeScript', 'S3-compatible storage']
+				'Re-provisioned ECS clusters, tightened IAM policies, and overhauled build pipelines for cost-effective, high-repetition deployment cycles across enterprise client workloads, including migrating a global client’s cloud platform to a new account.',
+			stack: ['AWS ECS', 'Terraform', 'GitHub Actions']
 		},
 		{
-			title: 'Internal admin tooling',
-			role: 'Full-stack',
+			title: 'LG Energy Storage System (ESS) tooling',
+			role: 'Full-stack + embedded',
 			summary:
-				'The non-public side: staff managing accounts, permissions, and content without needing a developer for every change.',
-			stack: ['Vue / Nuxt', 'REST API']
+				'Updated and debugged Device Management Client and CLI tools for battery energy storage systems, across Windows-based (Gen 1/2) and Linux-based (Gen 3) generations.',
+			stack: ['C++', 'CLI tooling', 'Linux / Windows']
 		}
 	];
 </script>
@@ -48,18 +48,17 @@
 </section>
 
 <Section id="about" heading="about">
-	<!-- TODO(ricardo): replace with your real background. Keep it to 3-4
-	     sentences - this page is meant to be read in under a minute. -->
 	<p>
-		I build full web applications end-to-end - not just the pages people click through, but the
-		systems behind them: accounts and permissions, document uploads, reporting, and the cloud
-		infrastructure that keeps it all running. I lean backend and infrastructure, but I hold my own
-		on the frontend too - I know the fundamentals and don't need a framework to hide bad habits from
-		me.
+		Full-stack developer, DevOps, and cloud engineer. I build applications end-to-end - not just the
+		pages people click through, but the systems behind them: accounts and permissions, document
+		uploads, reporting, and the cloud infrastructure that keeps it all running. Currently Head of
+		Product at KargaX, previously CTO at Seaversity, and technical lead across enterprise client
+		work including LG's OTA platform and battery energy storage system software.
 	</p>
 	<p class="dim">
-		29 years old. Started when the web still shipped &lt;marquee&gt; tags without irony - still
-		prefer things that are simple and work over things that are impressive and fragile.
+		29 years old. Started on Unity3D games and AR/VR experiments before the web, back when
+		&lt;marquee&gt; tags shipped without irony - still prefer things that are simple and work over
+		things that are impressive and fragile.
 	</p>
 </Section>
 
@@ -75,7 +74,12 @@
 	<TerminalLine command="cat contact.txt">
 		<ul class="contact-list">
 			<li><a href="mailto:ricdeguzman@svnts.xyz">ricdeguzman@svnts.xyz</a></li>
-			<!-- TODO(ricardo): add GitHub / LinkedIn / whatever else you actually want listed -->
+			<li>
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
+				<a href="https://github.com/ric-dg" target="_blank" rel="noopener noreferrer"
+					>github.com/ric-dg</a
+				>
+			</li>
 		</ul>
 	</TerminalLine>
 </Section>
