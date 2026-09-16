@@ -10,7 +10,11 @@
 	// image stays unset until a real, NDA-safe UI screenshot exists for each -
 	// ProjectCard renders an honest "screenshot pending" placeholder rather
 	// than a fake image either way.
-	const projects: Project[] = [
+	//
+	// Split into paid/client work vs. personal projects - flattening both
+	// into one list understated the professional track record by diluting
+	// it with hobby projects, which matters for a paid-engagement pitch.
+	const workProjects: Project[] = [
 		{
 			title: 'KargaX — legacy-to-automated logistics platform',
 			role: 'Head of Product / Full-stack',
@@ -33,22 +37,6 @@
 			stack: ['C++', 'Rust', 'Linux / Windows']
 		},
 		{
-			title: 'AUM Attendance System',
-			role: 'Personal project / Full-stack',
-			summary:
-				'Multi-tenant attendance platform built from scratch - Discord and Telegram bots for clock-in/out, a SvelteKit dashboard and admin panel, and an Elysia + PostgreSQL API underneath.',
-			stack: ['SvelteKit', 'Elysia', 'PostgreSQL'],
-			image: '/projects/aum-dashboard.png'
-		},
-		{
-			title: 'HomeNVR',
-			role: 'Personal project / Systems',
-			summary:
-				'Cross-platform, self-hosted NVR - a single static Go daemon replacing fragile Python glue: process supervision, motion/sound-gated recording, and a browser-based control panel.',
-			stack: ['Go', 'Embedded panel', 'Cross-platform'],
-			image: '/projects/homenvr-status.png'
-		},
-		{
 			title: 'Lexphere',
 			role: 'IFELSE / Cloud + DevOps',
 			summary:
@@ -63,22 +51,6 @@
 			stack: ['Nuxt', 'NestJS', 'PostgreSQL'],
 			image: '/projects/enrollment-system.png',
 			variants: ['MTI', 'PMMA', 'STI', 'USMC', 'STIA']
-		},
-		{
-			title: 'TofuStack',
-			role: 'Personal project / Full-stack',
-			summary:
-				'Opinionated SvelteKit starter - a Hono API mounted directly on SvelteKit’s catch-all route instead of a separate backend, with Drizzle, PASETO auth, and dependency injection via TSyringe.',
-			stack: ['SvelteKit', 'Hono', 'Drizzle'],
-			link: 'https://github.com/ric-dg/TofuStack-bunified'
-		},
-		{
-			title: 'reknix',
-			role: 'Personal project / Full-stack',
-			summary:
-				'Open-source, self-hostable game analytics - a Rust (axum + sqlx) event-ingest server with Prometheus metrics and an OpenAPI-generated TypeScript client, feeding a SvelteKit dashboard.',
-			stack: ['Rust', 'PostgreSQL', 'SvelteKit'],
-			link: 'https://github.com/reknix/reknix'
 		},
 		{
 			title: 'AI-Powered HRIS Productivity Service',
@@ -102,13 +74,6 @@
 			stack: ['NestJS', 'SvelteKit', 'Prisma']
 		},
 		{
-			title: 'Multi-Game Studio Framework',
-			role: 'Personal project / Game dev + Rust',
-			summary:
-				'Work in progress - a shared Rust core (gdext bindings, deterministic board/progression/scoring, 23 unit tests) meant to back a whole line of Godot games, not just one. Reference game exports to both Windows and signed Android APK.',
-			stack: ['Rust', 'Godot', 'GDExtension']
-		},
-		{
 			title: 'Fintech/Crypto Platform Backend',
 			role: 'IFELSE / Full-stack',
 			summary:
@@ -121,17 +86,59 @@
 			summary:
 				'Self-hosted remote state backend for Terraform, built from scratch rather than depending on a managed service - state locking and storage for infrastructure-as-code pipelines.',
 			stack: ['Go', 'Terraform', 'Infrastructure']
+		}
+	];
+
+	const personalProjects: Project[] = [
+		{
+			title: 'AUM Attendance System',
+			role: 'Full-stack',
+			summary:
+				'Multi-tenant attendance platform built from scratch - Discord and Telegram bots for clock-in/out, a SvelteKit dashboard and admin panel, and an Elysia + PostgreSQL API underneath.',
+			stack: ['SvelteKit', 'Elysia', 'PostgreSQL'],
+			image: '/projects/aum-dashboard.png'
+		},
+		{
+			title: 'HomeNVR',
+			role: 'Systems',
+			summary:
+				'Cross-platform, self-hosted NVR - a single static Go daemon replacing fragile Python glue: process supervision, motion/sound-gated recording, and a browser-based control panel.',
+			stack: ['Go', 'Embedded panel', 'Cross-platform'],
+			image: '/projects/homenvr-status.png'
+		},
+		{
+			title: 'TofuStack',
+			role: 'Full-stack',
+			summary:
+				'Opinionated SvelteKit starter - a Hono API mounted directly on SvelteKit’s catch-all route instead of a separate backend, with Drizzle, PASETO auth, and dependency injection via TSyringe.',
+			stack: ['SvelteKit', 'Hono', 'Drizzle'],
+			link: 'https://github.com/ric-dg/TofuStack-bunified'
+		},
+		{
+			title: 'reknix',
+			role: 'Full-stack',
+			summary:
+				'Open-source, self-hostable game analytics - a Rust (axum + sqlx) event-ingest server with Prometheus metrics and an OpenAPI-generated TypeScript client, feeding a SvelteKit dashboard.',
+			stack: ['Rust', 'PostgreSQL', 'SvelteKit'],
+			link: 'https://github.com/reknix/reknix'
+		},
+		{
+			title: 'Multi-Game Studio Framework',
+			role: 'Game dev + Rust',
+			summary:
+				'Work in progress - a shared Rust core (gdext bindings, deterministic board/progression/scoring, 23 unit tests) meant to back a whole line of Godot games, not just one. Reference game exports to both Windows and signed Android APK.',
+			stack: ['Rust', 'Godot', 'GDExtension']
 		},
 		{
 			title: 'Home Kubernetes GitOps Cluster',
-			role: 'Personal project / Systems + DevOps',
+			role: 'Systems + DevOps',
 			summary:
 				'GitOps-managed Kubernetes cluster for a home lab - load balancing and ingress with automated TLS, a full observability stack, all declaratively managed and synced via ArgoCD. Doubles as a dev workspace and a place to test-drive Linux distros.',
 			stack: ['Kubernetes', 'ArgoCD', 'GitOps']
 		},
 		{
 			title: 'Bida Juan(a)',
-			role: 'Personal project / Game dev',
+			role: 'Game dev',
 			summary:
 				'A historical RPG exploring Filipino games and culture (Larong Pinoy), from early in my career - before the pivot into web and infrastructure work.',
 			stack: ['Unity3D', 'Game design'],
@@ -229,7 +236,18 @@
 		through more in a call.
 	</p>
 	<div class="grid">
-		{#each projects as project (project.title)}
+		{#each workProjects as project (project.title)}
+			<ProjectCard {project} />
+		{/each}
+	</div>
+</Section>
+
+<Section id="projects" heading="personal projects">
+	<p class="dim work-note">
+		Side projects built and maintained on my own time, outside client work.
+	</p>
+	<div class="grid">
+		{#each personalProjects as project (project.title)}
 			<ProjectCard {project} />
 		{/each}
 	</div>

@@ -23,6 +23,7 @@
 		<nav aria-label="Section navigation">
 			<a href="#about"><Orb color={1} />about</a>
 			<a href="#work"><Orb color={2} />work</a>
+			<a href="#projects"><Orb color={4} />personal projects</a>
 			<a href="#contact"><Orb color={3} />contact</a>
 		</nav>
 		<ThemeToggle />
