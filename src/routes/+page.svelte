@@ -54,6 +54,15 @@
 			summary:
 				'Multi-tenant SaaS platform for law firms - microservices architecture (auth, API gateway, tenant management) behind a main app and a separate super-admin console.',
 			stack: ['SvelteKit', 'NestJS', 'Microservices']
+		},
+		{
+			title: 'Enrollment Management System',
+			role: 'Seaversity / Full-stack',
+			summary:
+				'Course enrollment and admin platform for vocational/maritime training providers - course catalog, scheduling, payments, and an admin console for managing training programs end to end. Built once, deployed per institution.',
+			stack: ['Nuxt', 'NestJS', 'PostgreSQL'],
+			image: '/projects/enrollment-system.png',
+			variants: ['MTI', 'PMMA', 'STI', 'USMC', 'STIA']
 		}
 	];
 </script>

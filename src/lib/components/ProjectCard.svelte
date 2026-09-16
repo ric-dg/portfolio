@@ -21,6 +21,16 @@
 				<li>{tech}</li>
 			{/each}
 		</ul>
+		{#if project.variants && project.variants.length > 0}
+			<details class="variants">
+				<summary>Deployed for {project.variants.length} organizations</summary>
+				<ul>
+					{#each project.variants as org (org)}
+						<li>{org}</li>
+					{/each}
+				</ul>
+			</details>
+		{/if}
 		{#if project.link}
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- project.link is always an external URL to a deployed project, never an internal route resolve() would apply to. -->
 			<a href={project.link} target="_blank" rel="noopener noreferrer">view →</a>
@@ -115,5 +125,26 @@
 
 	.stack li:nth-child(4n + 4) {
 		border-color: var(--orb-4);
+	}
+
+	.variants {
+		font-size: 0.8rem;
+	}
+
+	.variants summary {
+		cursor: pointer;
+		color: var(--link);
+		width: fit-content;
+	}
+
+	.variants summary:hover {
+		text-decoration: underline;
+	}
+
+	.variants ul {
+		list-style: disc;
+		margin: var(--space-1) 0 0;
+		padding-left: 1.2rem;
+		color: var(--fg-dim);
 	}
 </style>
