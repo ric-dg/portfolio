@@ -49,11 +49,11 @@
 			image: '/projects/homenvr-status.png'
 		},
 		{
-			title: 'Law Firm Super-Admin Panel',
+			title: 'Lexphere',
 			role: 'Freelance / Full-stack',
 			summary:
-				'Super-admin frontend built for a law firm’s internal system - Next.js with shadcn/ui, i18n, and full test coverage via Jest.',
-			stack: ['Next.js', 'TypeScript', 'shadcn/ui']
+				'Multi-tenant SaaS platform for law firms - microservices architecture (auth, API gateway, tenant management) behind a main app and a separate super-admin console.',
+			stack: ['SvelteKit', 'NestJS', 'Microservices']
 		}
 	];
 </script>
