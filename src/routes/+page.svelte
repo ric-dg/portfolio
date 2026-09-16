@@ -19,7 +19,7 @@
 			stack: ['SvelteKit', 'NestJS', 'PostgreSQL']
 		},
 		{
-			title: 'LG OTA Platform — AWS Cloud Migration & CI/CD',
+			title: 'LG OTA Platform — AWS cloud migration & CI/CD',
 			role: 'IFELSE / DevOps + Cloud',
 			summary:
 				'Co-authored the planning and migration of LG’s OTA platform AWS infrastructure to IFELSE’s account - re-provisioned ECS clusters, tightened IAM policies, and overhauled build pipelines for faster, more reliable deployments.',
@@ -133,15 +133,15 @@
 			target="_blank"
 			rel="noopener noreferrer">PCI Seaversity VR</a
 		>
-		was a
+		reached the
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
 		<a
 			href="https://2018.spaceappschallenge.org/locations/makati-city-bonifacio-global-city/"
 			target="_blank"
-			rel="noopener noreferrer">Global Finalist</a
+			rel="noopener noreferrer">Global Finalist round</a
 		>
-		at NASA's Space Apps Challenge (Makati City / BGC) and a Global Nominee in the Virtual Space Exploration
-		category, for Mars2Earth VR - I led the VR side.
+		at NASA's Space Apps Challenge (Makati City / BGC), earning a Global Nominee spot in the Virtual Space
+		Exploration category for Mars2Earth VR - I led the VR side.
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
 		<a href="https://www.youtube.com/watch?v=_VMjFPb09y4" target="_blank" rel="noopener noreferrer"
 			>Covered on ABS-CBN's Bandila</a
