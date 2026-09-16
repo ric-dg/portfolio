@@ -176,8 +176,9 @@
 		infrastructure. I build applications end-to-end - not just the pages people click through, but
 		the systems behind them: accounts and permissions, document uploads, reporting, and the cloud
 		infrastructure that keeps it all running. Currently Head of Product at KargaX and Senior
-		Full-Stack Developer at IFELSE, previously CTO at Seaversity - technical lead across enterprise
-		client work including LG's OTA platform and battery energy storage system software.
+		Full-Stack Developer at IFELSE - co-planning architecture with the CTO and supporting every dev
+		there across client work including LG's OTA platform and battery energy storage system software.
+		Previously CTO at Seaversity.
 	</p>
 	<p class="dim">
 		29 years old. Started on Unity3D games and AR/VR experiments before the web, back when
