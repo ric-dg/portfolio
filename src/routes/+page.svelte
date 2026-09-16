@@ -180,6 +180,10 @@
 </Section>
 
 <Section id="work" heading="work">
+	<p class="dim work-note">
+		A selection, not the full picture - a lot of client work stays off here by NDA. Happy to walk
+		through more in a call.
+	</p>
 	<div class="grid">
 		{#each projects as project (project.title)}
 			<ProjectCard {project} />
@@ -232,6 +236,10 @@
 	.dim {
 		color: var(--fg-dim);
 		font-size: 0.9rem;
+	}
+
+	.work-note {
+		margin: 0 0 var(--space-3);
 	}
 
 	.grid {
