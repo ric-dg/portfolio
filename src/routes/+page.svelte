@@ -47,6 +47,13 @@
 				'Cross-platform, self-hosted NVR - a single static Go daemon replacing fragile Python glue: process supervision, motion/sound-gated recording, and a browser-based control panel.',
 			stack: ['Go', 'Embedded panel', 'Cross-platform'],
 			image: '/projects/homenvr-status.png'
+		},
+		{
+			title: 'Law Firm Super-Admin Panel',
+			role: 'Freelance / Full-stack',
+			summary:
+				'Super-admin frontend built for a law firm’s internal system - Next.js with shadcn/ui, i18n, and full test coverage via Jest.',
+			stack: ['Next.js', 'TypeScript', 'shadcn/ui']
 		}
 	];
 </script>
