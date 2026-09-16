@@ -86,6 +86,13 @@
 			summary:
 				'Multi-tenant HR backend with OpenAI-integrated productivity reporting - ticket handling, timesheet analysis, and automated productivity reports across tenant organizations.',
 			stack: ['NestJS', 'OpenAI', 'RabbitMQ']
+		},
+		{
+			title: 'AGV Fleet Integration Middleware',
+			role: 'IFELSE / Systems + Robotics',
+			summary:
+				'Middleware bridging a Manufacturing Execution System (Oracle), an autonomous robot fleet (Bear Robotics ACS), and PLC hardware - real-time order dispatch, hardware polling with retry/circuit-breaker logic, and a live operations dashboard. Originally built in Go, later rewritten in Rust for cross-platform deployment.',
+			stack: ['Rust', 'Oracle', 'Industrial protocols']
 		}
 	];
 </script>
