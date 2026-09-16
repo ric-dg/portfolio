@@ -91,7 +91,7 @@
 			title: 'AGV Fleet Integration Middleware',
 			role: 'IFELSE / Systems + Robotics',
 			summary:
-				'Middleware bridging a Manufacturing Execution System (Oracle), an autonomous robot fleet (Bear Robotics ACS), and PLC hardware - real-time order dispatch, hardware polling with retry/circuit-breaker logic, and a live operations dashboard. Originally built in Go, later rewritten in Rust for cross-platform deployment.',
+				'Middleware bridging a Manufacturing Execution System (Oracle), an autonomous robot fleet (Bear Robotics ACS), and PLC hardware - real-time order dispatch, hardware polling with retry/circuit-breaker logic, and a live operations dashboard. Ported from an original C# implementation to Go, then rewritten again in Rust for cross-platform deployment.',
 			stack: ['Rust', 'Oracle', 'Industrial protocols']
 		},
 		{
@@ -112,7 +112,7 @@
 			title: 'Fintech/Crypto Platform Backend',
 			role: 'IFELSE / Full-stack',
 			summary:
-				'Backend for a wallet, trading, and staking platform - membership, referrals, loans, and payments alongside on-chain and trading-bot functionality. Largest single codebase by commit volume across all my client work.',
+				'Backend for a wallet, trading, and staking platform - membership, referrals, loans, and payments alongside on-chain and trading-bot functionality, plus its AWS deployment infrastructure. Largest single codebase by commit volume across all my client work.',
 			stack: ['NestJS', 'SvelteKit', 'PostgreSQL']
 		},
 		{
