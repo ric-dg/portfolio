@@ -123,6 +123,13 @@
 			stack: ['Go', 'Terraform', 'Infrastructure']
 		},
 		{
+			title: 'Home Kubernetes GitOps Cluster',
+			role: 'Personal project / Systems + DevOps',
+			summary:
+				'GitOps-managed Kubernetes cluster for a home lab - load balancing and ingress with automated TLS, a full observability stack, all declaratively managed and synced via ArgoCD.',
+			stack: ['Kubernetes', 'ArgoCD', 'GitOps']
+		},
+		{
 			title: 'Bida Juan(a)',
 			role: 'Personal project / Game dev',
 			summary:
