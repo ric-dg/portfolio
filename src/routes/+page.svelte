@@ -121,6 +121,14 @@
 			summary:
 				'Self-hosted remote state backend for Terraform, built from scratch rather than depending on a managed service - state locking and storage for infrastructure-as-code pipelines.',
 			stack: ['Go', 'Terraform', 'Infrastructure']
+		},
+		{
+			title: 'Bida Juan(a)',
+			role: 'Personal project / Game dev',
+			summary:
+				'A historical RPG exploring Filipino games and culture (Larong Pinoy), from early in my career - before the pivot into web and infrastructure work.',
+			stack: ['Unity3D', 'Game design'],
+			link: 'https://youtu.be/SVjXTlFarOw'
 		}
 	];
 </script>
