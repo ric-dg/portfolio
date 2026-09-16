@@ -116,22 +116,14 @@
 		Full-stack developer, DevOps, and cloud engineer with 10+ years across game dev, web, and cloud
 		infrastructure. I build applications end-to-end - not just the pages people click through, but
 		the systems behind them: accounts and permissions, document uploads, reporting, and the cloud
-		infrastructure that keeps it all running. Currently Head of Product at KargaX, previously CTO at
-		Seaversity, and technical lead across enterprise client work including LG's OTA platform and
-		battery energy storage system software.
+		infrastructure that keeps it all running. Currently Head of Product at KargaX and Senior
+		Full-Stack Developer at IFELSE, previously CTO at Seaversity - technical lead across enterprise
+		client work including LG's OTA platform and battery energy storage system software.
 	</p>
 	<p class="dim">
-		29 years old. In elementary, the school librarian used to pull me out of class to help digitize
-		old books - I could type without looking at the keyboard, just the page. By 2nd year high school
-		(2010) I was in weekend computer classes on top of regular school: Windows XP, Office,
-		Photoshop, and basic HTML/CSS/JS. Unity3D and AR/VR came a bit later - still prefer things that
-		are simple and work over things that are impressive and fragile.
-	</p>
-	<p class="dim">
-		My thesis was on game development, and that's genuinely where most of what I know about
-		performance comes from - every workaround, every micro-optimization. The motto back then:
-		Philippine devices were weak, so if you optimized properly, more people could actually run what
-		you built. I still don't compromise on that.
+		29 years old. Started on Unity3D games and AR/VR experiments before the web, back when
+		&lt;marquee&gt; tags shipped without irony - still prefer things that are simple and work over
+		things that are impressive and fragile.
 	</p>
 	<p class="dim">
 		In 2018, our team
