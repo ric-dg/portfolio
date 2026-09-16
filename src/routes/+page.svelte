@@ -31,6 +31,22 @@
 			summary:
 				'Updated and debugged Device Management Client and CLI tools for battery energy storage systems, across Windows-based (Gen 1/2) and Linux-based (Gen 3) generations.',
 			stack: ['C++', 'CLI tooling', 'Linux / Windows']
+		},
+		{
+			title: 'AUM Attendance System',
+			role: 'Personal project / Full-stack',
+			summary:
+				'Multi-tenant attendance platform built from scratch - Discord and Telegram bots for clock-in/out, a SvelteKit dashboard and admin panel, and an Elysia + PostgreSQL API underneath.',
+			stack: ['SvelteKit', 'Elysia', 'PostgreSQL'],
+			image: '/projects/aum-dashboard.png'
+		},
+		{
+			title: 'HomeNVR',
+			role: 'Personal project / Systems',
+			summary:
+				'Cross-platform, self-hosted NVR - a single static Go daemon replacing fragile Python glue: process supervision, motion/sound-gated recording, and a browser-based control panel.',
+			stack: ['Go', 'Embedded panel', 'Cross-platform'],
+			image: '/projects/homenvr-status.png'
 		}
 	];
 </script>
