@@ -79,6 +79,13 @@
 				'Open-source, self-hostable game analytics - a Rust (axum + sqlx) event-ingest server with Prometheus metrics and an OpenAPI-generated TypeScript client, feeding a SvelteKit dashboard.',
 			stack: ['Rust', 'PostgreSQL', 'SvelteKit'],
 			link: 'https://github.com/reknix/reknix'
+		},
+		{
+			title: 'AI-Powered HRIS Productivity Service',
+			role: 'IFELSE / Full-stack + AI',
+			summary:
+				'Multi-tenant HR backend with OpenAI-integrated productivity reporting - ticket handling, timesheet analysis, and automated productivity reports across tenant organizations.',
+			stack: ['NestJS', 'OpenAI', 'RabbitMQ']
 		}
 	];
 </script>
