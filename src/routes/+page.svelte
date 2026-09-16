@@ -29,8 +29,8 @@
 			title: 'LG Energy Storage System (ESS) tooling',
 			role: 'IFELSE / Full-stack + embedded',
 			summary:
-				'Updated and debugged Device Management Client and CLI tools for battery energy storage systems, across Windows-based (Gen 1/2) and Linux-based (Gen 3) generations.',
-			stack: ['C++', 'CLI tooling', 'Linux / Windows']
+				'Updated and debugged Device Management Client and CLI tools for battery energy storage systems, across Windows-based (Gen 1/2) and Linux-based (Gen 3) generations. Also wrote a Rust compatibility shim replacing a Windows-only proprietary SDK dependency, so the client can be built natively for Linux.',
+			stack: ['C++', 'Rust', 'Linux / Windows']
 		},
 		{
 			title: 'AUM Attendance System',
@@ -100,6 +100,27 @@
 			summary:
 				'Work in progress - a shared Rust core (gdext bindings, deterministic board/progression/scoring, 23 unit tests) meant to back a whole line of Godot games, not just one. Reference game exports to both Windows and signed Android APK.',
 			stack: ['Rust', 'Godot', 'GDExtension']
+		},
+		{
+			title: 'Task Chain Platform',
+			role: 'IFELSE / Full-stack',
+			summary:
+				'Scenario/workflow management platform for the AGV fleet system above - a visual flow builder, scenario CRUD with revision tracking, and separate customer and admin frontends, all on a shared Rust API.',
+			stack: ['Rust', 'SvelteKit', 'Turborepo']
+		},
+		{
+			title: 'Fintech/Crypto Platform Backend',
+			role: 'IFELSE / Full-stack',
+			summary:
+				'Backend for a wallet, trading, and staking platform - membership, referrals, loans, and payments alongside on-chain and trading-bot functionality. Largest single codebase by commit volume across all my client work.',
+			stack: ['NestJS', 'SvelteKit', 'PostgreSQL']
+		},
+		{
+			title: 'Terraform State Server',
+			role: 'IFELSE / DevOps',
+			summary:
+				'Self-hosted remote state backend for Terraform, built from scratch rather than depending on a managed service - state locking and storage for infrastructure-as-code pipelines.',
+			stack: ['Go', 'Terraform', 'Infrastructure']
 		}
 	];
 </script>
