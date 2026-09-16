@@ -19,15 +19,15 @@
 			stack: ['SvelteKit', 'NestJS', 'PostgreSQL']
 		},
 		{
-			title: 'Enterprise AWS infrastructure & CI/CD',
-			role: 'DevOps / Cloud',
+			title: 'LG OTA Platform — AWS Cloud Migration & CI/CD',
+			role: 'IFELSE / DevOps + Cloud',
 			summary:
-				'Re-provisioned ECS clusters, tightened IAM policies, and overhauled build pipelines for cost-effective, high-repetition deployment cycles across enterprise client workloads, including migrating a global client’s cloud platform to a new account.',
+				'Co-authored the planning and migration of LG’s OTA platform AWS infrastructure to IFELSE’s account - re-provisioned ECS clusters, tightened IAM policies, and overhauled build pipelines for faster, more reliable deployments.',
 			stack: ['AWS ECS', 'Terraform', 'GitHub Actions']
 		},
 		{
 			title: 'LG Energy Storage System (ESS) tooling',
-			role: 'Full-stack + embedded',
+			role: 'IFELSE / Full-stack + embedded',
 			summary:
 				'Updated and debugged Device Management Client and CLI tools for battery energy storage systems, across Windows-based (Gen 1/2) and Linux-based (Gen 3) generations.',
 			stack: ['C++', 'CLI tooling', 'Linux / Windows']
@@ -50,7 +50,7 @@
 		},
 		{
 			title: 'Lexphere',
-			role: 'Freelance / Full-stack',
+			role: 'IFELSE / Full-stack',
 			summary:
 				'Multi-tenant SaaS platform for law firms - microservices architecture (auth, API gateway, tenant management) behind a main app and a separate super-admin console.',
 			stack: ['SvelteKit', 'NestJS', 'Microservices']
@@ -124,6 +124,28 @@
 		&lt;marquee&gt; tags shipped without irony - still prefer things that are simple and work over
 		things that are impressive and fragile.
 	</p>
+	<p class="dim">
+		In 2018, our team
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
+		<a
+			href="https://2018.spaceappschallenge.org/challenges/universe-beauty-and-wonder/virtual-space-exploration/teams/pci-seaversity-vr/"
+			target="_blank"
+			rel="noopener noreferrer">PCI Seaversity VR</a
+		>
+		was a
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
+		<a
+			href="https://2018.spaceappschallenge.org/locations/makati-city-bonifacio-global-city/"
+			target="_blank"
+			rel="noopener noreferrer">Global Finalist</a
+		>
+		at NASA's Space Apps Challenge (Makati City / BGC) and a Global Nominee in the Virtual Space Exploration
+		category, for Mars2Earth VR - I led the VR side.
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
+		<a href="https://www.youtube.com/watch?v=_VMjFPb09y4" target="_blank" rel="noopener noreferrer"
+			>Covered on ABS-CBN's Bandila</a
+		>.
+	</p>
 </Section>
 
 <Section id="work" heading="work">
@@ -142,6 +164,14 @@
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
 				<a href="https://github.com/ric-dg" target="_blank" rel="noopener noreferrer"
 					>github.com/ric-dg</a
+				>
+			</li>
+			<li>
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
+				<a
+					href="https://www.linkedin.com/in/deguzmanricardo016/"
+					target="_blank"
+					rel="noopener noreferrer">linkedin.com/in/deguzmanricardo016</a
 				>
 			</li>
 			<li>
