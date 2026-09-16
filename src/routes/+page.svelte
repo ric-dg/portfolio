@@ -95,6 +95,13 @@
 			stack: ['Rust', 'Oracle', 'Industrial protocols']
 		},
 		{
+			title: 'Interactive Tour Guide Robot Platform',
+			role: 'IFELSE / Full-stack',
+			summary:
+				'Backend and dashboard for a facility/tour-guide robot deployment - organization and facility management, event announcements, gallery content, and a live operations dashboard for staff.',
+			stack: ['NestJS', 'SvelteKit', 'Prisma']
+		},
+		{
 			title: 'Multi-Game Studio Framework',
 			role: 'Personal project / Game dev + Rust',
 			summary:
