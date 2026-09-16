@@ -2,7 +2,13 @@
 	import type { Project } from '$lib/types';
 	import ImageLightbox from './ImageLightbox.svelte';
 
-	let { project }: { project: Project } = $props();
+	// Which section this card renders in - drives the wording of the
+	// no-image placeholder (client work with nothing public reads
+	// "confidential", a personal project that just hasn't been
+	// screenshotted yet reads "no screenshot yet"). Not stored on Project
+	// itself since it's a fact about where the card is placed, not the
+	// project.
+	let { project, context }: { project: Project; context: 'work' | 'personal' } = $props();
 
 	// null = closed; otherwise the index into project.images currently shown.
 	let lightboxIndex = $state<number | null>(null);
@@ -24,6 +30,18 @@
 			{/if}
 		</button>
 		<ImageLightbox images={project.images} alt={project.title} bind:index={lightboxIndex} />
+	{:else}
+		<div class="shot shot-static">
+			<span class="placeholder">
+				{#if project.link}
+					public - see link below
+				{:else if context === 'work'}
+					confidential - NDA
+				{:else}
+					no screenshot yet
+				{/if}
+			</span>
+		</div>
 	{/if}
 	<div class="body">
 		<h3>{project.title}</h3>
@@ -83,6 +101,22 @@
 
 	.shot:hover img {
 		transform: scale(1.03);
+	}
+
+	.shot-static {
+		border-style: dashed;
+		cursor: default;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: var(--space-2);
+	}
+
+	.placeholder {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: var(--fg-dim);
 	}
 
 	.count-badge {

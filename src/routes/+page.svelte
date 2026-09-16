@@ -7,9 +7,10 @@
 
 	const roles = ['Web Developer', 'DevOps', 'Cloud Engineer'];
 
-	// image stays unset until a real, NDA-safe UI screenshot exists for each -
-	// ProjectCard renders an honest "screenshot pending" placeholder rather
-	// than a fake image either way.
+	// images stays unset until a real, NDA-safe screenshot exists for a
+	// project - ProjectCard picks an honest placeholder label for the gap
+	// (confidential / no screenshot yet / see link below) rather than a
+	// vague "pending" that doesn't distinguish the two.
 	//
 	// Split into paid/client work vs. personal projects - flattening both
 	// into one list understated the professional track record by diluting
@@ -237,7 +238,7 @@
 	</p>
 	<div class="grid">
 		{#each workProjects as project (project.title)}
-			<ProjectCard {project} />
+			<ProjectCard {project} context="work" />
 		{/each}
 	</div>
 </Section>
@@ -248,7 +249,7 @@
 	</p>
 	<div class="grid">
 		{#each personalProjects as project (project.title)}
-			<ProjectCard {project} />
+			<ProjectCard {project} context="personal" />
 		{/each}
 	</div>
 </Section>
