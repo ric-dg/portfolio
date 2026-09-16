@@ -1,17 +1,30 @@
 <script lang="ts">
 	import type { Project } from '$lib/types';
+	import ImageLightbox from './ImageLightbox.svelte';
 
 	let { project }: { project: Project } = $props();
+
+	// null = closed; otherwise the index into project.images currently shown.
+	let lightboxIndex = $state<number | null>(null);
 </script>
 
 <article class="card">
-	<div class="shot" class:empty={!project.image}>
-		{#if project.image}
-			<img src={project.image} alt="Screenshot of {project.title}" loading="lazy" />
-		{:else}
-			<span class="placeholder">screenshot pending</span>
-		{/if}
-	</div>
+	{#if project.images && project.images.length > 0}
+		<button
+			type="button"
+			class="shot"
+			onclick={() => (lightboxIndex = 0)}
+			aria-label="View {project.images.length > 1
+				? `${project.images.length} screenshots`
+				: 'screenshot'} of {project.title}"
+		>
+			<img src={project.images[0]} alt="Screenshot of {project.title}" loading="lazy" />
+			{#if project.images.length > 1}
+				<span class="count-badge">+{project.images.length - 1}</span>
+			{/if}
+		</button>
+		<ImageLightbox images={project.images} alt={project.title} bind:index={lightboxIndex} />
+	{/if}
 	<div class="body">
 		<h3>{project.title}</h3>
 		<p class="role">{project.role}</p>
@@ -49,13 +62,15 @@
 	}
 
 	.shot {
+		position: relative;
 		aspect-ratio: 16 / 10;
-		border: 1px dashed var(--border);
+		border: 1px solid var(--border);
 		border-radius: 3px;
 		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		display: block;
+		padding: 0;
+		background: none;
+		cursor: zoom-in;
 	}
 
 	.shot img {
@@ -63,16 +78,23 @@
 		height: 100%;
 		object-fit: cover;
 		display: block;
+		transition: transform 0.15s ease;
 	}
 
-	.shot.empty {
-		background: var(--bg);
+	.shot:hover img {
+		transform: scale(1.03);
 	}
 
-	.placeholder {
+	.count-badge {
+		position: absolute;
+		bottom: var(--space-1);
+		right: var(--space-1);
+		background: rgb(0 0 0 / 65%);
+		color: #fff;
 		font-family: var(--font-mono);
-		font-size: 0.75rem;
-		color: var(--fg-dim);
+		font-size: 0.7rem;
+		padding: 0.1rem 0.4rem;
+		border-radius: 3px;
 	}
 
 	h3 {

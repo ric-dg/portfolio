@@ -49,7 +49,7 @@
 			summary:
 				'Course enrollment and admin platform for vocational/maritime training providers - course catalog, scheduling, payments, and an admin console for managing training programs end to end. Built once, deployed per institution.',
 			stack: ['Nuxt', 'NestJS', 'PostgreSQL'],
-			image: '/projects/enrollment-system.png',
+			images: ['/projects/enrollment-system.png'],
 			variants: ['MTI', 'PMMA', 'STI', 'USMC', 'STIA']
 		},
 		{
@@ -96,7 +96,7 @@
 			summary:
 				'Multi-tenant attendance platform built from scratch - Discord and Telegram bots for clock-in/out, a SvelteKit dashboard and admin panel, and an Elysia + PostgreSQL API underneath.',
 			stack: ['SvelteKit', 'Elysia', 'PostgreSQL'],
-			image: '/projects/aum-dashboard.png'
+			images: ['/projects/aum-dashboard.png']
 		},
 		{
 			title: 'HomeNVR',
@@ -104,7 +104,7 @@
 			summary:
 				'Cross-platform, self-hosted NVR - a single static Go daemon replacing fragile Python glue: process supervision, motion/sound-gated recording, and a browser-based control panel.',
 			stack: ['Go', 'Embedded panel', 'Cross-platform'],
-			image: '/projects/homenvr-status.png'
+			images: ['/projects/homenvr-status.png']
 		},
 		{
 			title: 'TofuStack',
@@ -308,6 +308,10 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 		gap: var(--space-3);
+		/* Cards without a screenshot are shorter than ones with - without this,
+		   Grid's default stretch would pad a text-only card to match its
+		   taller row-mate, leaving an ugly empty gap at the card's bottom. */
+		align-items: start;
 	}
 
 	.contact-list {
