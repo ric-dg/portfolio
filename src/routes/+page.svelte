@@ -63,6 +63,22 @@
 			stack: ['Nuxt', 'NestJS', 'PostgreSQL'],
 			image: '/projects/enrollment-system.png',
 			variants: ['MTI', 'PMMA', 'STI', 'USMC', 'STIA']
+		},
+		{
+			title: 'TofuStack',
+			role: 'Personal project / Full-stack',
+			summary:
+				'Opinionated SvelteKit starter - a Hono API mounted directly on SvelteKit’s catch-all route instead of a separate backend, with Drizzle, PASETO auth, and dependency injection via TSyringe.',
+			stack: ['SvelteKit', 'Hono', 'Drizzle'],
+			link: 'https://github.com/ric-dg/TofuStack-bunified'
+		},
+		{
+			title: 'reknix',
+			role: 'Personal project / Full-stack',
+			summary:
+				'Open-source, self-hostable game analytics - a Rust (axum + sqlx) event-ingest server with Prometheus metrics and an OpenAPI-generated TypeScript client, feeding a SvelteKit dashboard.',
+			stack: ['Rust', 'PostgreSQL', 'SvelteKit'],
+			link: 'https://github.com/reknix/reknix'
 		}
 	];
 </script>
