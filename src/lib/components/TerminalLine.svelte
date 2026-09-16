@@ -8,7 +8,7 @@
 </script>
 
 <p class="line">
-	<span class="prompt">guest@ricardo</span><span class="sep">:~$</span>
+	<span class="prompt">guest@yerdz</span><span class="sep">:~$</span>
 	{command}
 	<span class="cursor" aria-hidden="true">_</span>
 </p>

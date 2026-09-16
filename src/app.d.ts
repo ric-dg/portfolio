@@ -8,6 +8,9 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	// Injected at build time via vite.config.ts's `define`.
+	const __BUILD_DATE__: string;
 }
 
 export {};

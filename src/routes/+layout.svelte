@@ -37,8 +37,19 @@
 			<span>&copy; {new Date().getFullYear()} Ricardo De Guzman Jr.</span>
 			<VisitorCounter />
 		</div>
+		<div class="webring">
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL, not an internal route. -->
+			<a href="https://github.com/ric-dg" target="_blank" rel="noopener noreferrer" class="badge"
+				>github</a
+			>
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- mailto link, not an internal route. -->
+			<a href="mailto:ricdeguzman@svnts.xyz" class="badge">email</a>
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- static asset download, not an app route. -->
+			<a href="/ricardo-de-guzman-cv.pdf" download class="badge">cv.pdf</a>
+		</div>
 		<p class="joke">
-			best viewed in any browser, any size &middot; built with SvelteKit, deployed static
+			best viewed in any browser, any size &middot; built with SvelteKit, deployed static &middot;
+			last updated {__BUILD_DATE__}
 		</p>
 	</footer>
 </div>
@@ -103,5 +114,41 @@
 	.joke {
 		margin: var(--space-1) 0 0;
 		opacity: 0.8;
+	}
+
+	.webring {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-top: var(--space-2);
+	}
+
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 88px;
+		height: 31px;
+		border: 1px solid var(--border);
+		border-radius: 3px;
+		color: var(--fg-dim);
+		text-decoration: none;
+		letter-spacing: 0.03em;
+	}
+
+	.badge:hover {
+		color: var(--fg);
+	}
+
+	.badge:nth-child(3n + 1) {
+		border-color: var(--orb-1);
+	}
+
+	.badge:nth-child(3n + 2) {
+		border-color: var(--orb-2);
+	}
+
+	.badge:nth-child(3n + 3) {
+		border-color: var(--orb-3);
 	}
 </style>
