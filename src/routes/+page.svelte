@@ -93,6 +93,13 @@
 			summary:
 				'Middleware bridging a Manufacturing Execution System (Oracle), an autonomous robot fleet (Bear Robotics ACS), and PLC hardware - real-time order dispatch, hardware polling with retry/circuit-breaker logic, and a live operations dashboard. Originally built in Go, later rewritten in Rust for cross-platform deployment.',
 			stack: ['Rust', 'Oracle', 'Industrial protocols']
+		},
+		{
+			title: 'Multi-Game Studio Framework',
+			role: 'Personal project / Game dev + Rust',
+			summary:
+				'Work in progress - a shared Rust core (gdext bindings, deterministic board/progression/scoring, 23 unit tests) meant to back a whole line of Godot games, not just one. Reference game exports to both Windows and signed Android APK.',
+			stack: ['Rust', 'Godot', 'GDExtension']
 		}
 	];
 </script>
