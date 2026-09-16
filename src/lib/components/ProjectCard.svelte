@@ -71,7 +71,12 @@
 
 <style>
 	.card {
-		display: grid;
+		/* flex column, not grid - a stretched .card (see .grid's align-items:
+		   stretch) needs its children to stay top-packed with any leftover
+		   space left as blank space after the last child, which is flex's
+		   default and not grid's. */
+		display: flex;
+		flex-direction: column;
 		gap: var(--space-2);
 		padding: var(--space-3);
 		background: var(--bg-panel);

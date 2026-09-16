@@ -309,10 +309,11 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 		gap: var(--space-3);
-		/* Cards without a screenshot are shorter than ones with - without this,
-		   Grid's default stretch would pad a text-only card to match its
-		   taller row-mate, leaving an ugly empty gap at the card's bottom. */
-		align-items: start;
+		/* Default stretch - every card in a row matches its tallest row-mate.
+		   ProjectCard is a flex column internally, so the extra height just
+		   becomes blank space after its last element instead of stretching
+		   any one piece of content. */
+		align-items: stretch;
 	}
 
 	.contact-list {
