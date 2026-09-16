@@ -50,10 +50,10 @@
 		},
 		{
 			title: 'Lexphere',
-			role: 'IFELSE / Full-stack',
+			role: 'IFELSE / Cloud + DevOps',
 			summary:
-				'Multi-tenant SaaS platform for law firms - microservices architecture (auth, API gateway, tenant management) behind a main app and a separate super-admin console.',
-			stack: ['SvelteKit', 'NestJS', 'Microservices']
+				'Multi-tenant SaaS platform for law firms - handled the AWS infrastructure and deployment pipeline across its microservices, and built the super-admin console frontend.',
+			stack: ['AWS', 'SvelteKit', 'CI/CD']
 		},
 		{
 			title: 'Enrollment Management System',
@@ -100,13 +100,6 @@
 			summary:
 				'Work in progress - a shared Rust core (gdext bindings, deterministic board/progression/scoring, 23 unit tests) meant to back a whole line of Godot games, not just one. Reference game exports to both Windows and signed Android APK.',
 			stack: ['Rust', 'Godot', 'GDExtension']
-		},
-		{
-			title: 'Task Chain Platform',
-			role: 'IFELSE / Full-stack',
-			summary:
-				'Scenario/workflow management platform for the AGV fleet system above - a visual flow builder, scenario CRUD with revision tracking, and separate customer and admin frontends, all on a shared Rust API.',
-			stack: ['Rust', 'SvelteKit', 'Turborepo']
 		},
 		{
 			title: 'Fintech/Crypto Platform Backend',
