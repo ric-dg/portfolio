@@ -24,6 +24,13 @@
 	--orb-4: #2ecc40;
 	--focus-ring: #0000ee;
 
+	/* Overlays drawn on top of photo content (the lightbox backdrop, the
+	   image-count badge) - deliberately theme-invariant, not redefined
+	   below, since they sit on a screenshot's own colors, not the page's. */
+	--overlay-scrim: rgb(0 0 0 / 70%);
+	--badge-bg: rgb(0 0 0 / 65%);
+	--badge-fg: #ffffff;
+
 	--font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 	--font-sans: Georgia, 'Times New Roman', Times, serif;
 	--font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;

@@ -12,6 +12,20 @@
 
 	// null = closed; otherwise the index into project.images currently shown.
 	let lightboxIndex = $state<number | null>(null);
+
+	// Single source of truth for the no-image placeholder wording, checked
+	// in priority order: an explicit per-project override first, then what
+	// can be inferred from the project's own data, then finally the section
+	// it's rendered in. Kept as one derived value rather than branching
+	// inline in the template so a future 5th case has one place to extend.
+	let noImageLabel = $derived(
+		project.noImageLabel ??
+			(project.link
+				? 'public - see link below'
+				: context === 'work'
+					? 'confidential - NDA'
+					: 'no screenshot yet')
+	);
 </script>
 
 <article class="card">
@@ -32,17 +46,7 @@
 		<ImageLightbox images={project.images} alt={project.title} bind:index={lightboxIndex} />
 	{:else}
 		<div class="shot shot-static">
-			<span class="placeholder">
-				{#if project.noImageLabel}
-					{project.noImageLabel}
-				{:else if project.link}
-					public - see link below
-				{:else if context === 'work'}
-					confidential - NDA
-				{:else}
-					no screenshot yet
-				{/if}
-			</span>
+			<span class="placeholder">{noImageLabel}</span>
 		</div>
 	{/if}
 	<div class="body">
@@ -130,8 +134,8 @@
 		position: absolute;
 		bottom: var(--space-1);
 		right: var(--space-1);
-		background: rgb(0 0 0 / 65%);
-		color: #fff;
+		background: var(--badge-bg);
+		color: var(--badge-fg);
 		font-family: var(--font-mono);
 		font-size: 0.7rem;
 		padding: 0.1rem 0.4rem;

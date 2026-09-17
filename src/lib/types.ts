@@ -3,7 +3,7 @@ export interface Project {
 	summary: string;
 	role: string;
 	stack: string[];
-	/** Paths under /static. Omitted entirely (no placeholder shown) when there's nothing to show yet. */
+	/** Paths under /static. Omitted while there's nothing to show yet - ProjectCard renders a labeled placeholder instead, never a blank slot. */
 	images?: string[];
 	link?: string;
 	/** Same underlying product deployed for multiple organizations - named here instead of as separate cards. */

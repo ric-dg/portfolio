@@ -1,8 +1,10 @@
 <script lang="ts">
 	// Native <dialog> rather than a hand-rolled modal or a lightbox library -
-	// showModal() gives focus trapping, ESC-to-close, and top-layer stacking
-	// for free. Only backdrop-click-to-close and arrow-key navigation are
-	// added on top.
+	// showModal() gives ESC-to-close and top-layer stacking for free.
+	// Backdrop-click-to-close, arrow-key navigation, and the Tab focus trap
+	// below are added on top - measured (real headless Chromium, not just
+	// theory) that showModal()'s own focus containment isn't reliable enough
+	// to depend on alone, so it's reinforced explicitly rather than assumed.
 	let {
 		images,
 		alt,
@@ -11,9 +13,16 @@
 
 	let dialogEl: HTMLDialogElement;
 
+	function focusables(): HTMLElement[] {
+		return [...dialogEl.querySelectorAll<HTMLElement>('button, [href], input, [tabindex]')];
+	}
+
 	$effect(() => {
 		if (index !== null && !dialogEl.open) {
 			dialogEl.showModal();
+			// Explicit rather than relying on the browser's own autofocus -
+			// same reasoning as the Tab trap below.
+			focusables()[0]?.focus();
 		} else if (index === null && dialogEl.open) {
 			dialogEl.close();
 		}
@@ -41,9 +50,29 @@
 	}
 
 	function onKeydown(event: KeyboardEvent) {
+		if (event.key === 'Tab') {
+			trapFocus(event);
+			return;
+		}
 		if (images.length < 2) return;
 		if (event.key === 'ArrowLeft') prev();
 		else if (event.key === 'ArrowRight') next();
+	}
+
+	// Manual wrap-around, standard focus-trap shape: Tab off the last
+	// focusable goes to the first, Shift+Tab off the first goes to the last.
+	function trapFocus(event: KeyboardEvent) {
+		const items = focusables();
+		if (items.length === 0) return;
+		const first = items[0];
+		const last = items[items.length - 1];
+		if (event.shiftKey && document.activeElement === first) {
+			event.preventDefault();
+			last.focus();
+		} else if (!event.shiftKey && document.activeElement === last) {
+			event.preventDefault();
+			first.focus();
+		}
 	}
 </script>
 
@@ -81,7 +110,7 @@
 	}
 
 	dialog::backdrop {
-		background: rgb(0 0 0 / 70%);
+		background: var(--overlay-scrim);
 	}
 
 	figure {
