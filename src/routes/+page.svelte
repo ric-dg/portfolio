@@ -211,9 +211,9 @@
 		Previously CTO at Seaversity.
 	</p>
 	<p class="dim">
-		29 years old. Started on Unity3D games and AR/VR experiments before the web, back when
-		&lt;marquee&gt; tags shipped without irony - still prefer things that are simple and work over
-		things that are impressive and fragile.
+		Started on Unity3D games and AR/VR experiments before the web, back when &lt;marquee&gt; tags
+		shipped without irony - still prefer things that are simple and work over things that are
+		impressive and fragile.
 	</p>
 	<p class="dim">
 		In 2018, our team

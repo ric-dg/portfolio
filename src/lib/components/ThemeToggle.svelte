@@ -15,6 +15,10 @@
 		}
 	});
 
+	// Must match --bg's light/dark values in app.css, and the same two
+	// literals in app.html's pre-paint script that sets this before hydration.
+	const THEME_COLOR = { light: '#ffffff', dark: '#14141a' };
+
 	function apply(next: Theme) {
 		theme = next;
 		const root = document.documentElement;
@@ -34,6 +38,11 @@
 				// Same as above.
 			}
 		}
+		const isDark =
+			next === 'dark' || (next === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+		document
+			.querySelector('meta[name="theme-color"]')
+			?.setAttribute('content', isDark ? THEME_COLOR.dark : THEME_COLOR.light);
 	}
 
 	const labels: Record<Theme, string> = { system: 'auto', light: 'light', dark: 'dark' };
