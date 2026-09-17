@@ -87,6 +87,14 @@
 			summary:
 				'Self-hosted remote state backend for Terraform, built from scratch rather than depending on a managed service - state locking and storage for infrastructure-as-code pipelines.',
 			stack: ['Go', 'Terraform', 'Infrastructure']
+		},
+		{
+			title: 'New Era Cap — VIP Customer Management System',
+			role: 'Freelance / Full-stack',
+			summary:
+				'VIP customer management system for New Era Cap Philippines (hats and apparel retail) - customer accounts and membership/loyalty tracking, deployed live in 2023.',
+			stack: ['NestJS', 'Nuxt 3'],
+			noImageLabel: 'site no longer live'
 		}
 	];
 

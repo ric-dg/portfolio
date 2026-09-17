@@ -33,7 +33,9 @@
 	{:else}
 		<div class="shot shot-static">
 			<span class="placeholder">
-				{#if project.link}
+				{#if project.noImageLabel}
+					{project.noImageLabel}
+				{:else if project.link}
 					public - see link below
 				{:else if context === 'work'}
 					confidential - NDA
